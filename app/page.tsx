@@ -42,8 +42,8 @@ export default function HomePage() {
     },
     {
       name: 'Clothing',
-      image: 'https://res.cloudinary.com/drxf8zbyf/image/upload/v1771720176/tote_sabpxa.jpg',
-      href: 'https://res.cloudinary.com/drxf8zbyf/image/upload/v1771720176/tote_sabpxa.jpg',
+      image: 'https://res.cloudinary.com/drxf8zbyf/image/upload/v1765798796/samples/outdoor-woman.jpg',
+      href: 'https://res.cloudinary.com/drxf8zbyf/image/upload/v1765798796/samples/outdoor-woman.jpg',
     },
   ]
 
@@ -162,7 +162,7 @@ export default function HomePage() {
                     src={category.image}
                     alt={category.name}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover transition-transform duration-500 group-hover:scale-100"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                     <h3 className="font-display text-2xl font-bold text-white">
@@ -196,7 +196,7 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {featuredProducts.map((product, index) => (
                 <div 
                   key={product.id}
