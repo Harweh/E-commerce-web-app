@@ -187,13 +187,13 @@ export default function HomePage() {
                   Handpicked favorites from our collection
                 </p>
               </div>
-              <Link
+              {/* <Link
                 href="/shop"
                 className="hidden sm:inline-flex items-center text-neutral-800 text-primary-600 hover:text-primary-700 font-semibold"
               >
                 View All
                 <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
+              </Link> */}
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -124,7 +124,7 @@ export const MOCK_PRODUCTS: Product[] = [
         price: 69.99,
         images: [
         'https://res.cloudinary.com/drxf8zbyf/image/upload/v1771802001/pixelcreatures-yoga-940359_1920_tsrxha.jpg',
-        'https://res.cloudinary.com/drxf8zbyf/image/upload/v1771802000/peggy_marco-yoga-4650150_1920_wedekd.jpg',
+        // 'https://res.cloudinary.com/drxf8zbyf/image/upload/v1771802000/peggy_marco-yoga-4650150_1920_wedekd.jpg',
 
         ],
         category: 'Sports',
@@ -164,7 +164,7 @@ export const MOCK_PRODUCTS: Product[] = [
         price: 39.99,
         images: [
         'https://res.cloudinary.com/drxf8zbyf/image/upload/v1771802319/lenzatic-xbox-4989229_1920_mqcvgy.jpg',
-        'https://res.cloudinary.com/drxf8zbyf/image/upload/v1771802306/pagefact-touch-pad-319840_1920_xcdvtx.jpg',
+        // 'https://res.cloudinary.com/drxf8zbyf/image/upload/v1771802306/pagefact-touch-pad-319840_1920_xcdvtx.jpg',
 
         ],
         category: 'Electronics',
