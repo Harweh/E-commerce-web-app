@@ -23,11 +23,11 @@ export default function AccountPage() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 pt-24 pb-12">
+        <div className="min-h-screen bg-gray-50 pt-36 sm:pt-27 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header Section */}
-            <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg p-6 mb-6 text-white">
+            <div className="bg-gradient-to-r from-black to-black rounded-lg p-6 mb-6 text-white">
             <h1 className="text-2xl font-bold mb-2">Welcome {user.name}!</h1>
             <p className="text-orange-100">{user.email}</p>
             </div>

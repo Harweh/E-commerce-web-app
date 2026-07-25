@@ -8,6 +8,7 @@ export const useAuthStore = create<AuthState>()(
         user: null,
         isAuthenticated: false,
 
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars -- password kept for the real API call this mock will be replaced with
         login: async (email: string, password: string) => {
             // Simulated login - replace with actual API call
             try {
@@ -23,11 +24,12 @@ export const useAuthStore = create<AuthState>()(
             }
             
             set({ user, isAuthenticated: true })
-            } catch (error) {
+            } catch {
             throw new Error('Login failed')
             }
         },
 
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars -- password kept for the real API call this mock will be replaced with
         register: async (name: string, email: string, password: string) => {
             // Simulated registration - replace with actual API call
             try {
@@ -41,7 +43,7 @@ export const useAuthStore = create<AuthState>()(
             }
             
             set({ user, isAuthenticated: true })
-            } catch (error) {
+            } catch {
             throw new Error('Registration failed')
             }
         },

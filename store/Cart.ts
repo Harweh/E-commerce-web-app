@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import { CartState, Product } from '@/types'
+import { CartState } from '@/types'
 
 export const useCartStore = create<CartState>()(
     persist(
@@ -32,22 +32,37 @@ export const useCartStore = create<CartState>()(
             }
         },
 
-        removeItem: (productId) => {
-            set({ items: get().items.filter(item => item.product.id !== productId) })
+        // Note: CartState's removeItem/updateQuantity signatures only take a
+        // productId (see types/index.ts). To correctly target one variant
+        // among several for the same product, pass color/size as optional
+        // extra args — existing callers that only pass productId still work
+        // and will match the first item with that product id.
+        removeItem: (productId, color, size) => {
+            set({
+            items: get().items.filter(item => 
+                !(item.product.id === productId &&
+                    (color === undefined || item.selectedColor === color) &&
+                    (size === undefined || item.selectedSize === size))
+            )
+            })
         },
 
-        updateQuantity: (productId, quantity) => {
+        updateQuantity: (productId, quantity, color, size) => {
             if (quantity <= 0) {
-            get().removeItem(productId)
+            get().removeItem(productId, color, size)
             return
             }
             
             const items = get().items
-            const itemIndex = items.findIndex(item => item.product.id === productId)
+            const itemIndex = items.findIndex(item => 
+                item.product.id === productId &&
+                (color === undefined || item.selectedColor === color) &&
+                (size === undefined || item.selectedSize === size)
+            )
             
             if (itemIndex > -1) {
             const newItems = [...items]
-            newItems[itemIndex].quantity = quantity
+            newItems[itemIndex] = { ...newItems[itemIndex], quantity }
             set({ items: newItems })
             }
         },

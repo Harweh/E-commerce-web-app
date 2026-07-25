@@ -48,8 +48,8 @@ export interface CartItem {
 export interface CartState {
     items: CartItem[]
     addItem: (product: Product, quantity?: number, color?: string, size?: string) => void
-    removeItem: (productId: string) => void
-    updateQuantity: (productId: string, quantity: number) => void
+    removeItem: (productId: string, color?: string, size?: string) => void
+    updateQuantity: (productId: string, quantity: number, color?: string, size?: string) => void
     clearCart: () => void
     getTotalPrice: () => number
     getTotalItems: () => number
